@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="pcp" commit="fa9f553a56661263b46cad1617a08b8b8b2363f4">
+<index version="1" name="PCP Scripts" commit="fa9f553a56661263b46cad1617a08b8b8b2363f4">
   <category name="Let It Key (global scale tool)">
     <reapack name="Let_It_Key_(Input_FX).jsfx" type="effect" desc="Let It Key Input FX">
       <metadata>
