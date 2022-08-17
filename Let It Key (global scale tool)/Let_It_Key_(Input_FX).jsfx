@@ -1,5 +1,3 @@
--- @noindex
-
 desc: Let It Key Input FX
 version: 1.0
 author: pcp 
@@ -7,9 +5,8 @@ about:
   # Let It Key Input FX (insert as RFXChain)
   Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle
   License: GPL - http://www.gnu.org/licenses/gpl.html
-  Don't Load this effect directly, add the accompanying FX Chain to the Input FX of any instrument track templates where you'd want to use it.
-changelog:
-  - Initial release
+  Don't load this effect directly, use the scripts
+  
 
 
 

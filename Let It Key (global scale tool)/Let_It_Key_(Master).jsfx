@@ -1,11 +1,9 @@
--- @noindex
-
 desc: Let It Key (MASTER)
 version: 1.0
 author: pcp 
 about:
   # Let It Key Master FX 
-  You can load this JSFX directly on your Master track, but it is easier to use one of the *Add Let It Key...* scripts to automatically add it with track controls and Input FX.
+  You can load this JSFX directly on your Master track, but it is easier to use the scripts.
   Allows you to control input fx instances of Let It Key on other tracks in the project.
 
   Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle
