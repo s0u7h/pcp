@@ -1,8 +1,33 @@
 -- @noindex
 
-
+reaper.PreventUIRefresh(1)
 reaper.Undo_BeginBlock()
 
+-- UNSELECT ALL TRACKS
+function UnselectAllTracks()
+	first_track = reaper.GetTrack(0, 0)
+	reaper.SetOnlyTrackSelected(first_track)
+	reaper.SetTrackSelected(first_track, false)
+end
+
+-- SAVE INITIAL TRACKS SELECTION
+init_sel_tracks = {}
+local function SaveSelectedTracks(table)
+  for m = 0, reaper.CountSelectedTracks(0)-1 do
+    table[m+1] = reaper.GetSelectedTrack(0, m)
+  end
+end
+
+-- RESTORE INITIAL TRACKS SELECTION
+function RestoreSelectedTracks(table)
+  UnselectAllTracks()
+  for _, track in ipairs(table) do
+    reaper.SetTrackSelected(track, true)
+  end
+end
+
+
+SaveSelectedTracks(init_sel_tracks)
 
 reaper.Main_OnCommand(40296, 0) -- Select all tracks
 
@@ -46,7 +71,8 @@ if on_mstr_already == -1 -- check if Let It Key master is on the chain
   reaper.TrackFX_AddByName(mstr, "../Scripts/pcp/Let It Key (global scale tool)/Let-It-Key-Master.RfxChain", false, 1) 
 end
 
-            
+RestoreSelectedTracks(init_sel_tracks)
+
 reaper.Undo_EndBlock("Add Let It Key to all tracks with instruments", -1)
 reaper.PreventUIRefresh(-1)
 
