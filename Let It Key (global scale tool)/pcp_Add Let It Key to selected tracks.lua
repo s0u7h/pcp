@@ -11,7 +11,7 @@ for i = 0, reaper.CountSelectedTracks(0)-1 do
    -- reaper.ShowMessageBox(there_already, "there?", 0)
     if  there_already == -1  -- check if jsfx let it key is in input fx 
      then 
-      reaper.TrackFX_AddByName(trk, "../Scripts/pcp_scripts/Let It Key (global scale tool)/Let-It-Key-IFX.RfxChain", true, -1000)
+      reaper.TrackFX_AddByName(trk, "../Scripts/pcp/Let It Key (global scale tool)/Let-It-Key-IFX.RfxChain", true, -1000)
       
       local IFXCount = reaper.TrackFX_GetRecCount(trk)
                      for j = 1,IFXCount do
@@ -33,7 +33,7 @@ on_mstr_already = reaper.TrackFX_AddByName(mstr, "JS:Let It Key (MASTER)", false
 --reaper.ShowMessageBox(on_mstr_already, "master?", 0)
 if on_mstr_already == -1 -- check if Let It Key master is on the chain
  then
- reaper.TrackFX_AddByName(trk, "../Scripts/pcp_scripts/Let It Key (global scale tool)/Let-It-Key-Master.RfxChain", true, -1000)
+ reaper.TrackFX_AddByName(mstr, "../Scripts/pcp/Let It Key (global scale tool)/Let-It-Key-Master.RfxChain", true, -1000)
 end
 
             
