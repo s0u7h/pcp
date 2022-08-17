@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="PCP Scripts" commit="15f8e1c021129c9acd4b2ebacc54355fb4a0108b">
+<index version="1" name="PCP Scripts" commit="603ba161e68c9aaad0908a3ff39b5393aa549738">
   <category name="Let It Key (global scale tool)">
+    <reapack name="Let_It_Key_(Input_FX).jsfx" type="effect" desc="Let It Key Input FX">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Let It Key Input FX (insert as RFXChain)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle License: GPL - http://www.gnu.org/licenses/gpl.html Don't load this effect directly, use the scripts\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="pcp" time="2022-08-17T04:56:13Z">
+        <source>https://github.com/s0u7h/pcp/raw/0dd29e0ac72ca2100b44eaa0a35e5eb0fa59c169/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Input_FX).jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Let_It_Key_(Master).jsfx" type="effect" desc="Let It Key (MASTER)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Let It Key Master FX\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You can load this JSFX directly on your Master track, but it is easier to use the scripts. Allows you to control input fx instances of Let It Key on other tracks in the project.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle License: GPL - http://www.gnu.org/licenses/gpl.html\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="pcp" time="2022-08-17T04:56:13Z">
+        <changelog><![CDATA[- Initial release]]></changelog>
+        <source>https://github.com/s0u7h/pcp/raw/0dd29e0ac72ca2100b44eaa0a35e5eb0fa59c169/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Let_It_Key_Syncer.jsfx" type="effect" desc="Let It Key Syncer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Let It Key Syncer\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Don't use standalone - this is utilised by Let It Key to allow smooth communication between Master and Input FX instances. Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle License: GPL - http://www.gnu.org/licenses/gpl.html Don't load this effect directly, use the scripts\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="pcp" time="2022-08-17T04:56:13Z">
+        <source>https://github.com/s0u7h/pcp/raw/0dd29e0ac72ca2100b44eaa0a35e5eb0fa59c169/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_Syncer.jsfx</source>
+      </version>
+    </reapack>
     <reapack name="pcp_Let It Key - global scale tool.lua" type="script" desc="Let It Key (global scale tool)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -41,6 +88,21 @@
         <source file="Let_It_Key_(Input_FX).jsfx">https://github.com/s0u7h/pcp/raw/8e0dd215b9df2269c6a8fe0c41d2dd66cb4c4ae2/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Input_FX).jsfx</source>
         <source file="Let_It_Key_Syncer.jsfx">https://github.com/s0u7h/pcp/raw/8e0dd215b9df2269c6a8fe0c41d2dd66cb4c4ae2/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_Syncer.jsfx</source>
         <source file="Let_It_Key_(Master).jsfx">https://github.com/s0u7h/pcp/raw/8e0dd215b9df2269c6a8fe0c41d2dd66cb4c4ae2/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
+      </version>
+      <version name="1.22" author="pcp" time="2022-08-17T04:56:33Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source>https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Let%20It%20Key%20-%20global%20scale%20tool.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from all non-instrument tracks.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20all%20non-instrument%20tracks.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from all tracks.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20all%20tracks.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from selected tracks.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20selected%20tracks.lua</source>
+        <source main="main" file="pcp_Add Let It Key to all tracks with instruments.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20all%20tracks%20with%20instruments.lua</source>
+        <source main="main" file="pcp_Add Let It Key to all tracks.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20all%20tracks.lua</source>
+        <source main="main" file="pcp_Add Let It Key to selected tracks.lua">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20selected%20tracks.lua</source>
+        <source file="Let-It-Key-Master.RfxChain">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let-It-Key-Master.RfxChain</source>
+        <source file="Let-It-Key-IFX.RfxChain">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let-It-Key-IFX.RfxChain</source>
+        <source file="Let_It_Key_(Input_FX).jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Input_FX).jsfx</source>
+        <source file="Let_It_Key_Syncer.jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_Syncer.jsfx</source>
+        <source file="Let_It_Key_(Master).jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
       </version>
     </reapack>
   </category>
