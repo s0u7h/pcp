@@ -1,5 +1,5 @@
 BYPASS 0 0
-<JS pcp/Let_It_Key_Syncer.jsfx ""
+<JS pcp/Let_It_Key_Syncer.jsfx-inc ""
   0 4 0 "Major.txt" 1 1 3 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 >
 <JS_SER
@@ -8,7 +8,7 @@ BYPASS 0 0
 >
 WAK 0 0
 BYPASS 0 0
-<JS pcp/Let_It_Key_(Input_FX).jsfx ""
+<JS pcp/Let_It_Key_(Input_FX).jsfx-inc ""
   1 4 0 "Major.txt" 1 1 3 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "C Major"
 >
 <JS_SER

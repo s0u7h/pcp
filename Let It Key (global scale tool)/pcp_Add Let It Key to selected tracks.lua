@@ -6,7 +6,7 @@ reaper.Undo_BeginBlock()
 for i = 0, reaper.CountSelectedTracks(0)-1 do
   local trk = reaper.GetSelectedTrack(0,i)
   local there_already = -1 
-  there_already = reaper.TrackFX_AddByName(trk, "JS:Let It Key Syncer", true, 0)
+  there_already = reaper.TrackFX_AddByName(trk, "JS:pcp/Let_It_Key_Syncer.jsfx-inc", true, 0)
    
    -- reaper.ShowMessageBox(there_already, "there?", 0)
     if  there_already == -1  -- check if jsfx let it key is in input fx 
