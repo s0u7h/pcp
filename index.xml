@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="PCP Scripts" commit="8e0dd215b9df2269c6a8fe0c41d2dd66cb4c4ae2">
+<index version="1" name="PCP Scripts" commit="15f8e1c021129c9acd4b2ebacc54355fb4a0108b">
   <category name="Let It Key (global scale tool)">
     <reapack name="pcp_Let It Key - global scale tool.lua" type="script" desc="Let It Key (global scale tool)">
       <metadata>
@@ -45,7 +45,7 @@
     </reapack>
   </category>
   <category name="ReaClips">
-    <reapack name="pcp_Reaclip_core.lua" type="script" desc="Reaclip_core.lua">
+    <reapack name="pcp_Reaclip_core.lua" type="script" desc="ReaClips">
       <metadata>
         <link rel="website" href="https://github.com/s0u7h/pcp_scripts/">Repository</link>
       </metadata>
@@ -65,6 +65,23 @@
         <source type="data" file="toolbar_icons/Load ReaClip.png">https://github.com/s0u7h/pcp/raw/54a1faac71a5abf0e8fa83b474ba15371114a0a1/ReaClips/toolbar_icons/Load%20ReaClip.png</source>
         <source type="data" file="toolbar_icons/ReaClips.png">https://github.com/s0u7h/pcp/raw/54a1faac71a5abf0e8fa83b474ba15371114a0a1/ReaClips/toolbar_icons/ReaClips.png</source>
         <source type="data" file="toolbar_icons/Save ReaClip.png">https://github.com/s0u7h/pcp/raw/54a1faac71a5abf0e8fa83b474ba15371114a0a1/ReaClips/toolbar_icons/Save%20ReaClip.png</source>
+      </version>
+      <version name="1.05" author="pcp" time="2022-08-17T04:28:28Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source>https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Reaclip_core.lua</source>
+        <source main="main" file="pcp_Insert ReaClip at edit cursor (load and explode project on new tracks in current project).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Insert%20ReaClip%20at%20edit%20cursor%20(load%20and%20explode%20project%20on%20new%20tracks%20in%20current%20project).lua</source>
+        <source main="main" file="pcp_Insert ReaClip at start (load and explode project on new tracks in current project).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Insert%20ReaClip%20at%20start%20(load%20and%20explode%20project%20on%20new%20tracks%20in%20current%20project).lua</source>
+        <source main="main" file="pcp_Save ReaClip (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Save ReaClip to Beats folder (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20to%20Beats%20folder%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Save ReaClip to FX Presets folder (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20to%20FX%20Presets%20folder%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Save ReaClip to Melodyned Clips folder (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20to%20Melodyned%20Clips%20folder%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Save ReaClip to SFX folder (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20to%20SFX%20folder%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Save ReaClip to user-defined folder (selected items).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Save%20ReaClip%20to%20user-defined%20folder%20(selected%20items).lua</source>
+        <source main="main" file="pcp_Open Media Explorer to ReaClips database - search rpp - sort last modified (edgemeal).lua">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/pcp_Open%20Media%20Explorer%20to%20ReaClips%20database%20-%20search%20rpp%20-%20sort%20last%20modified%20(edgemeal).lua</source>
+        <source type="data" file="toolbar_icons/Load ReaClip at Edit Cursor.png">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/toolbar_icons/Load%20ReaClip%20at%20Edit%20Cursor.png</source>
+        <source type="data" file="toolbar_icons/Load ReaClip.png">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/toolbar_icons/Load%20ReaClip.png</source>
+        <source type="data" file="toolbar_icons/ReaClips.png">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/toolbar_icons/ReaClips.png</source>
+        <source type="data" file="toolbar_icons/Save ReaClip.png">https://github.com/s0u7h/pcp/raw/15f8e1c021129c9acd4b2ebacc54355fb4a0108b/ReaClips/toolbar_icons/Save%20ReaClip.png</source>
       </version>
     </reapack>
   </category>
