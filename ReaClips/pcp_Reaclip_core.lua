@@ -1,9 +1,9 @@
 --[[
-@description Reaclip_core.lua
+@description ReaClips
 @author pcp
 @links 
 	Repository https://github.com/s0u7h/pcp_scripts/
-@version 1.3
+@version 1.05
 @changelog Initial release
 @metapackage
 @provides [nomain] .
