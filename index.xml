@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="PCP Scripts" commit="603ba161e68c9aaad0908a3ff39b5393aa549738">
+<index version="1" name="PCP Scripts" commit="fa9f553a56661263b46cad1617a08b8b8b2363f4">
   <category name="Let It Key (global scale tool)">
     <reapack name="Let_It_Key_(Input_FX).jsfx" type="effect" desc="Let It Key Input FX">
       <metadata>
@@ -103,6 +103,21 @@
         <source file="Let_It_Key_(Input_FX).jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Input_FX).jsfx</source>
         <source file="Let_It_Key_Syncer.jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_Syncer.jsfx</source>
         <source file="Let_It_Key_(Master).jsfx">https://github.com/s0u7h/pcp/raw/603ba161e68c9aaad0908a3ff39b5393aa549738/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
+      </version>
+      <version name="1.23" author="pcp" time="2022-08-17T05:07:45Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source>https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Let%20It%20Key%20-%20global%20scale%20tool.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from all non-instrument tracks.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20all%20non-instrument%20tracks.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from all tracks.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20all%20tracks.lua</source>
+        <source main="main" file="pcp_Remove Let It Key from selected tracks.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Remove%20Let%20It%20Key%20from%20selected%20tracks.lua</source>
+        <source main="main" file="pcp_Add Let It Key to all tracks with instruments.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20all%20tracks%20with%20instruments.lua</source>
+        <source main="main" file="pcp_Add Let It Key to all tracks.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20all%20tracks.lua</source>
+        <source main="main" file="pcp_Add Let It Key to selected tracks.lua">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/pcp_Add%20Let%20It%20Key%20to%20selected%20tracks.lua</source>
+        <source file="Let-It-Key-Master.RfxChain">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/Let-It-Key-Master.RfxChain</source>
+        <source file="Let-It-Key-IFX.RfxChain">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/Let-It-Key-IFX.RfxChain</source>
+        <source file="Let_It_Key_(Input_FX).jsfx">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Input_FX).jsfx</source>
+        <source file="Let_It_Key_Syncer.jsfx">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_Syncer.jsfx</source>
+        <source file="Let_It_Key_(Master).jsfx">https://github.com/s0u7h/pcp/raw/fa9f553a56661263b46cad1617a08b8b8b2363f4/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
       </version>
     </reapack>
   </category>
