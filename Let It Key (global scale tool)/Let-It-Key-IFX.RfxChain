@@ -1,0 +1,75 @@
+BYPASS 0 0
+<JS pcp/Let_It_Key_Syncer.jsfx ""
+  0 4 0 "Major.txt" 1 1 3 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+>
+<JS_SER
+  AACAQAAAAAAAAMBAAACAPwAAgD8AAEBAAAAAAAAAgEAAAAAAAADAQAAAgD8AAIA/AABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAA==
+>
+WAK 0 0
+BYPASS 0 0
+<JS pcp/Let_It_Key_(Input_FX).jsfx ""
+  1 4 0 "Major.txt" 1 1 3 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "C Major"
+>
+<JS_SER
+  AACAQAAAAAAAAMBAAACAPwAAgD8AAEBAAAAAAAAAgEAAAAAAAADAQAAAgD8AAIA/AABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAA==
+>
+PRESETNAME "C Major"
+<PROGRAMENV 6 0 "Start note   / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 6 0
+>
+<PROGRAMENV 7 0 "Input Channel / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 7 0
+>
+<PROGRAMENV 1 0 "Octave / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 1 0
+>
+<PROGRAMENV 2 0 "Root / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 2 0
+>
+<PROGRAMENV 3 0 "Scale / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 3 0
+>
+<PROGRAMENV 4 0 "Remap / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 4 0
+>
+<PROGRAMENV 5 0 "On/Off / Let It Key Input FX"
+  PARAMBASE 0
+  LFO 0
+  LFOWT 1 1
+  AUDIOCTL 0
+  AUDIOCTLWT 1 1
+  PLINK 1 0:-1 5 0
+>
+WAK 0 0

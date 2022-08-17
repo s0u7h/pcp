@@ -1,0 +1,177 @@
+-- @noindex
+
+desc: Let It Key Syncer
+version: 1.0
+author: pcp 
+about:
+  # Let It Key Syncer
+  Don't use standalone - this is utilised by Let It Key to allow smooth communication between Master and Input FX instances.
+  Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle
+  License: GPL - http://www.gnu.org/licenses/gpl.html
+changelog:
+  - Initial release
+
+in_pin:none
+out_pin:none
+
+
+slider1:0<0,3,1>-Bank
+slider2:3<0,10,1>-Octave
+slider3:0<0,11,1{C,C#,D,Eb,E,F,F#,G,G#,A,Bb,B}>-Root
+slider4:/ix_scales:none:Scale
+slider5:1<0,1,1{Chromatic (Pads) ,White Keys}>-Remap
+slider6:1<0,1,1{Off,On}>-On/Off
+slider7:3<0,9,1{C-1,C0,C1,C2,C3,C4,C5,C6,C7,C8}>-Start note  
+slider8:0<0,15,1{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}>-Input Channel
+
+
+@init
+
+bankchange = 1; // Prevent new instances from clearing existing values
+
+/*
+
+// Memory offsets
+inputTracker = 0 + 7;
+noteMap = 128 + 7;
+scale = 1024+ 7;
+
+// MIDI constants
+statNoteOn = $x90;
+statNoteOff = $x80;
+
+// File change flag
+scaleFile = -1;
+
+// white scale
+
+whiteScale[0] = 0; // C
+whiteScale[1] = 2; // D
+whiteScale[2] = 4; // E
+whiteScale[3] = 5; // F
+whiteScale[4] = 7; // G 
+whiteScale[5] = 9; // A 
+whiteScale[6] = 11; // B
+
+*/
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+@serialize
+function SerializeBank(bank*)
+(
+  file_var(0, bank.a);
+  file_var(0, bank.b);
+  file_var(0, bank.c);
+  file_var(0, bank.d);
+  file_var(0, bank.e);
+  file_var(0, bank.f);
+  file_var(0, bank.g);
+);
+
+SerializeBank(_global.pcp.Let_It_Key.A);
+SerializeBank(_global.pcp.Let_It_Key.B);
+SerializeBank(_global.pcp.Let_It_Key.C);
+SerializeBank(_global.pcp.Let_It_Key.D);
+
+
+
+@slider
+
+
+
+
+
+
+
+slider2 = min(max(slider2 | 0, 0), 127);  // Remove fractions and clamp to legal range
+slider3 = min(max(slider3 | 0, 0), 127);
+
+inChannel = slider8;
+octaveTranspose = slider2;
+
+root = slider3;
+mode = slider5;
+on = slider6;
+octaveOffset = slider7;
+posOffset = octaveOffset * 12;
+
+//Load scale
+scaleFile != slider4 ?
+(
+  scaleFile = slider4;
+  scaleSize = 0;
+  fileHandle = file_open(slider4);
+  fileHandle > 0 && file_text(fileHandle) ?
+  (
+    while
+    (
+      file_var(fileHandle, scale[scaleSize]);
+      file_avail(fileHandle) ? scaleSize += 1;
+    );
+    scaleSize = scaleSize + 1;
+    file_close(fileHandle);
+  );
+);
+
+
+function Clamp(val, lower, upper) ( min(max(val, lower), upper); );
+
+function UpdateGlobals(bank*)
+(
+  slider2 != bank.a ? bank.a = slider2;
+  slider3 != bank.b ? bank.b = slider3;
+  slider4 != bank.c ? bank.c = slider4;
+  slider5 != bank.d ? bank.d = slider5;
+  slider6 != bank.e ? bank.e = slider6;
+  slider7 != bank.f ? bank.f = slider7;
+  slider8 != bank.g ? bank.g = slider8;
+ 
+);
+
+slider1 != curBank ?
+(
+  slider1 = curBank = Clamp(slider1, 0, 3);
+  bankchange = 1; // Prevent overwriting of new bank values with current values
+);
+
+slider2 = Clamp(slider2, 0, 127);
+slider3 = Clamp(slider3, 0, 127);
+slider5 = Clamp(slider5, 0, 1);
+slider6 = Clamp(slider6, 0, 1);
+slider7 = Clamp(slider7, 0, 9);
+slider8 = Clamp(slider8, 0, 15);
+//slider9 = Clamp(slider9, 0, 100);
+
+!bankchange ? // Update globals only if bank hasn't changed
+(
+  slider1 == 0 ? UpdateGlobals(_global.pcp.Let_It_Key.A) :
+  slider1 == 1 ? UpdateGlobals(_global.pcp.Let_It_Key.B) :
+  slider1 == 2 ? UpdateGlobals(_global.pcp.Let_It_Key.C) :
+  slider1 == 3 ? UpdateGlobals(_global.pcp.Let_It_Key.D) ;
+);
+
+bankchange = 0;
+@block
+
+
+function UpdateSliders(bank*)
+(
+  slider2 = bank.a; sliderchange(slider2);
+  slider3 = bank.b; sliderchange(slider3);
+  slider4 = bank.c; sliderchange(slider4);
+  slider5 = bank.d; sliderchange(slider5);
+  slider6 = bank.e; sliderchange(slider6);
+  slider7 = bank.f; sliderchange(slider7);
+  slider8 = bank.g; sliderchange(slider8);
+);
+
+
+slider1 == 0 ? UpdateSliders(_global.pcp.Let_It_Key.A) :
+slider1 == 1 ? UpdateSliders(_global.pcp.Let_It_Key.B) :
+slider1 == 2 ? UpdateSliders(_global.pcp.Let_It_Key.C) :
+slider1 == 3 ? UpdateSliders(_global.pcp.Let_It_Key.D) ;
+
+
+

@@ -1,0 +1,14 @@
+BYPASS 0 0
+<JS pcp/Let_It_Key_(Master).jsfx ""
+  0 3 0 "Major.txt" 1 1 3 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "C Major"
+>
+<JS_SER
+  AABAQAAAAAAAAMBAAACAPwAAgD8AAEBAAAAAAAAAAAAAAAAAAADAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  AAAAAAAAAAAAAAAAAAAAAA==
+>
+PRESETNAME "C Major"
+PARMALIAS 2 " "
+PARMALIAS 3 " "
+PARMALIAS 5 " "
+PARM_TCP 2 3 5
+WAK 0 0
