@@ -3,8 +3,8 @@
 @author pcp
 @links 
 	Repository https://github.com/s0u7h/pcp_scripts/
-@version 1.05
-@changelog Initial release
+@version 1.06
+@changelog check for SWS
 @metapackage
 @provides [nomain] .
   [main] pcp_Insert ReaClip at edit cursor (load and explode project on new tracks in current project).lua
@@ -45,6 +45,7 @@ open_in_mx = true
 
 --END OF USER CONFIG AREA
 ----------------------
+
 
 
 function SaveReaClipAndOpenMX()
@@ -399,10 +400,28 @@ function open_mx_to_reaclips_path()
 
 end
 
+function CheckSWS()
+  local SWS_installed
+  if not reaper.BR_SetMediaTrackLayouts then
+    local retval = reaper.ShowMessageBox("SWS extension is required by this script.\nHowever, it doesn't seem to be present for this REAPER installation.\n\nDo you want to download it now ?", "Warning", 1)
+    if retval == 1 then
+      Open_URL("http://www.sws-extension.org/download/pre-release/")
+    end
+  else
+    SWS_installed = true
+  end
+  return SWS_installed
+end
+
+
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 
 if not preset_file_init then -- If the file is run directly, it will execute SaveReaClipAndOpenMX(), else it will wait for Init() to be called explicitely from the preset scripts (usually after having modified some global variable states).
-  SaveReaClipAndOpenMX()
+  -- TODO - add checks for cfillion and me2beats repos in reapack and for js_reascript api
+  CheckSWS()
+  if SWS_installed == true then
+    SaveReaClipAndOpenMX()
+  end
 end
 
 
