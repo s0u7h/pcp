@@ -3,7 +3,7 @@
 @author pcp
 @links 
 	Repository https://github.com/s0u7h/pcp_scripts/
-@version 1.06
+@version 1.06pre
 @changelog check for SWS
 @metapackage
 @provides [nomain] .
