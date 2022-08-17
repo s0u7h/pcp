@@ -17,7 +17,7 @@
   [main] pcp_Add Let It Key to selected tracks.lua
   Let-It-Key-Master.RfxChain
   Let-It-Key-IFX.RfxChain 
-  Let_It_Key_(Input_FX).jsfx
-  Let_It_Key_Syncer.jsfx
-  Let_It_Key_(Master).jsfx
+  [effects] Let_It_Key_(Input_FX).jsfx
+  [effects] Let_It_Key_Syncer.jsfx
+  [effects] Let_It_Key_(Master).jsfx
 --]]
