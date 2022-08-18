@@ -4,7 +4,7 @@
 @about ReaClips (build and browse a personal sound/clip/loop library)
   License: GPL - http://www.gnu.org/licenses/gpl.html
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.00
+@version 1.01
 @licence
 @metapackage
 @provides [nomain] .
