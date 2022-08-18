@@ -57,7 +57,7 @@ if you add the Load/Save/Browse Reaclip actions to your Main or Media Explorer t
 ![Load ReaClip at Edit Cursor](https://user-images.githubusercontent.com/5218005/179659712-593dca72-80ff-4a03-8db1-0199e984bccd.png)
 
 
-Thanks to @paat for the auto-name-and-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice on exploding projects. Plus all the other awesome scripters whose code makes up the bulk of this script's functionality.
+Thanks to @paat for the auto-name-and-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice on exploding projects, cfillion, SWS, me2beats and Julian Sader for code that makes up the bulk of this script's functionality.
 
 ### TODO
 Clean-up for ReaPack, find a workaround to the additional 'save as' dialog.
