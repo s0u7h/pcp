@@ -7,15 +7,15 @@
 @changelog check for SWS
 @metapackage
 @provides [nomain] .
-  [main] pcp_Insert ReaClip at edit cursor (load and explode project on new tracks in current project).lua
-  [main] pcp_Insert ReaClip at start (load and explode project on new tracks in current project).lua
+  [main=main,mediaexplorer] pcp_Insert ReaClip at edit cursor (load and explode project on new tracks in current project).lua
+  [main=main,mediaexplorer] pcp_Insert ReaClip at start (load and explode project on new tracks in current project).lua
   [main] pcp_Save ReaClip (selected items).lua
   [main] pcp_Save ReaClip to Beats folder (selected items).lua
   [main] pcp_Save ReaClip to FX Presets folder (selected items).lua
   [main] pcp_Save ReaClip to Melodyned Clips folder (selected items).lua
   [main] pcp_Save ReaClip to SFX folder (selected items).lua
   [main] pcp_Save ReaClip to user-defined folder (selected items).lua
-  [main] pcp_Open Media Explorer to ReaClips database - search rpp - sort last modified (edgemeal).lua
+  [main=main,mediaexplorer] pcp_Open Media Explorer to ReaClips database - search rpp - sort last modified (edgemeal).lua
   [data] toolbar_icons/Load ReaClip at Edit Cursor.png
   [data] toolbar_icons/Load ReaClip.png
   [data] toolbar_icons/ReaClips.png
