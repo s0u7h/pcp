@@ -8,7 +8,7 @@
 Play in key across all your tracks. This bundle lets you monitor and control the key of your project from the master track. Set the key in Master Track Controls ("Show FX parameters in panel" will make these visible).
 Ride or automate the root and scale and play in key throughout a project, playing the scale degrees on white keys (or use chromatic option for pads).
 
-This forks scripts from [IX](https://forum.cockos.com/showthread.php?t=6632) (Snap to Key and Global Sliders) with the [Easy Scale](https://forum.cockos.com/showthread.php?t=253198) mod by dissofiddle, and totally depends on their great work.
+This forks scripts from [IX](https://forum.cockos.com/showthread.php?t=6632) (Snap to Key and Global Sliders) and the [Easy Scale](https://forum.cockos.com/showthread.php?t=253198) mod by baldo, and relies on their great work. 
 
 What this adds is the ability to control any track's input key from a global control in the master track, which controls individual instances of Let It Key elsewhere in your project.
 
@@ -49,14 +49,21 @@ To access more parameters in the Master track, right-click on the effect and "Sh
 
 
 ## NOTES
+The "Add Let It Key to all tracks" (and Remove counterpart) should bee the default, as the resource usage is so minimal and if you throw this on the input fx of an audio track it won't even process anything until you're arming that track, and even then the CPU usage is vanishingly small. I've put the 'add  to selected tracks' and 'apply to tracks with instruments' more for completeness/OCD reasons.
 
 You can change the IX_Scales file at REAPER\Data\ix_scales - other files are available in the REAPER Stash.
-
 Or use **Lokasenna_Convert current scale to ix_scale **(in Reapack) to add the current key-snap scale in the midi editor to the scale bank used here.
+
+I changed the behaviour of the Easy Scale mod as it has a bug with 5 and 6 note scales. I like baldo's 'white keys' mode  as I find thinking in scale degrees more useful and musically relevant. This uses some of that code, but changed to allow playing scales like pentatonic and hexatonic with the root scale degree always on the C key, this means that e.g. for a five-note scale, the A and B white keys will be blocked along with the black keys.
 
 Don't add the Input FX JSFX directly yourself, it needs to be added as part of the FX chain, which includes prerolled parameter modulation with the syncer JSFX, otherwise it'll not update in real time (I mean, it will actually work like this but you'll have to start transport after every change).
 
+One interesting thing I discovered working around this is that you **can** actually have parameter modulation in the Input FX slots (at least for MIDI, and between Input FX... haven't tried audio). You just need to create an FX Chain in the regular Track FX slots and load that chain into I-FX.
+
 Unfortunately there's no way to save Input FX as the default for new tracks or change the "double click in empty TCP context to add new track" behaviour to launch a different track template, so the best way to add this automatically to a new track is to create track templates, and assign them shortcuts (SWS Resources makes it easy to add particular track templates with a shortcut)
+
+
 
 ## TODO
 Include the original Snap to Key modes (Remap/Block) as additional options
+Maybe a chorder
