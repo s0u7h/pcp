@@ -17,12 +17,13 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 ## Usage
 
 1. Select an item you want to save, and run the action "Save ReaClip (selected items)"
-2. This will prompt you to name the ReaClip (by default named with a time-stamp - thanks @paat for this snippet)
+2. This will prompt you to name the ReaClip (by default named and auto-saved with a time-stamp - thanks @paat!)
 3. The script will create a folder called "ReaClips" under your default save path. You can change this name in the script user settings or use one of the other actions (e.g. "Save ReaClip to Beats folder").
 4. There is an additional "save as" step due to limitations in REAPER's current API. When the dialog comes up, just hit OK. The option to include media should be enabled by default but maybe check this is the case on your system.
 5.  The script will then render the ReaClip, taking into account any sends or receives that affect the sound, and then open the Media Explorer to show the most recent ReaClips.
-6.  These are just project files so you can browse through them and either use the native actions to open them as projects or insert them as subprojects, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project.
-7.  The "Open Media Explorer to ReaClips" action is useful to put on a toolbar button. This is a super-useful Edgemeal snippet, edit the user settings inside for different folders/databases. ALso if you don't want the "Save ReaClip" actions to open the media browser automatically, you can change this in the script's user settings.
+6.  These are just project files so you can browse through them and either use the native actions to Open project / insert as subproject, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project.
+7.  If your clip contains Melodyne or other ARA edits then the ReaClip shoud keep your edits intact. However if you use the 'Insert ReaClip' actions it'll immediately reanalyze and lose the edits. In that case, use 'Insert as subproject' or 'Open project in new tab' instead.
+8.  The "Open Media Explorer to ReaClips" action is useful to put on a toolbar button. This is a super-useful Edgemeal snippet, edit the user settings inside for different folders/databases. ALso if you don't want the "Save ReaClip" actions to open the media browser automatically, you can change this in the script's user settings.
 
 ### REQUIREMENTS
 
@@ -38,7 +39,7 @@ They're just project files, with automatically generated audio previews, that th
 
 ### Why not track templates?
 
-Track templates still don't offer all the functionality for this type of workflow. With ReaClips, you can do everything you can do with a project. Preview in the Media Explorer, at different tempos and pitches. More useful ways to insert into an active project. And unlike track templates, ReaClips store the project-wide like tempo/time signature changes, and ARA data. If you use ARA plugins like Melodyne, you're probably familiar with the necessity to render stems/takes after making edits,, in case plugin reanalyses the source media. ReaClips for the most part work well with Melodyne, so this script can be used to 'archive' melodyned clips. 
+Track templates still don't offer as much functionality as projects for this type of workflow. With ReaClips, you can do everything you can do with a project, such as preview in the Media Explorer at different tempos and pitches, and have more useful ways to insert into an active project. And unlike track templates, ReaClips store the project-wide like tempo/time signature changes, and ARA data. If you use ARA plugins like Melodyne, you're probably familiar with the necessity to render stems/takes after making edits, in case the plugin reanalyses the source media. ReaClips for the most part work well with Melodyne, so this script can be used to 'archive' Melodyned clips. 
 
 ### BONUS HORRIFYING TOOLBAR ICONS
 
@@ -56,4 +57,4 @@ if you add the Load/Save/Browse Reaclip actions to your Main or Media Explorer t
 Thanks to @paat for the auto-name-and-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice on exploding projects. Plus all the other awesome scripters whose code makes up the bulk of this script's functionality.
 
 ### TODO
-Documentation, clean-up for ReaPack, find a workaround to the additional 'save as' dialog.
+Clean-up for ReaPack, find a workaround to the additional 'save as' dialog.
