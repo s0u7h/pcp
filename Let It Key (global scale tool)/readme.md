@@ -8,7 +8,7 @@
 Play in key across all your tracks. This bundle lets you monitor and control the key of your project from the master track. Set the key in Master Track Controls ("Show FX parameters in panel" will make these visible).
 Ride or automate the root and scale and play in key throughout a project, playing the scale degrees on white keys (or use chromatic option for pads).
 
-This forks scripts from [IX](https://forum.cockos.com/showthread.php?t=6632) (Snap to Key and Global Sliders) with the [Easy Scale](https://stash.reaper.fm/v/41954/easy%20scale.jpg) mod by dissofiddle, and totally depends on their great work.
+This forks scripts from [IX](https://forum.cockos.com/showthread.php?t=6632) (Snap to Key and Global Sliders) with the [Easy Scale](https://forum.cockos.com/showthread.php?t=253198) mod by dissofiddle, and totally depends on their great work.
 
 What this adds is the ability to control any track's input key from a global control in the master track, which controls individual instances of Let It Key elsewhere in your project.
 
