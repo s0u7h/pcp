@@ -16,7 +16,7 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 
 ## Usage
 
-1. Select an item you want to save, and run the action "Save ReaClip (selected items)"
+1. Select an item or items that you want to save, then run the action "Save ReaClip (selected items)"
 2. This will prompt you to name the ReaClip (by default named and auto-saved with a time-stamp - thanks @paat!)
 3. The script will create a folder called "ReaClips" under your default save path. You can change this name in the script user settings or use one of the other actions (e.g. "Save ReaClip to Beats folder").
 4. There is an additional "save as" step due to limitations in REAPER's current API. When the dialog comes up, just hit OK. The option to include media should be enabled by default but maybe check this is the case on your system.
