@@ -19,5 +19,5 @@
   Let-It-Key-IFX.RfxChain 
   [jsfx] Let_It_Key_(Input_FX).jsfx-inc
   [jsfx] Let_It_Key_Syncer.jsfx-inc
-  Let_It_Key_(Master).jsfx
+  [jsfx] Let_It_Key_(Master).jsfx
 --]]
