@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="pcp" commit="d6e7432f08f3426ca99ffe427196bf924365c388">
+<index version="1" name="pcp" commit="623f0e3309db86288438c112761c99d01ad8cbfc">
   <category name="Let It Key (global scale tool)">
-    <reapack name="Let_It_Key_(Master).jsfx" type="effect" desc="Let It Key (MASTER)">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Let It Key Master FX\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 You can load this JSFX directly on your Master track, but it is easier to use the scripts. Allows you to control input fx instances of Let It Key on other tracks in the project. Enable 'Show FX Parameters' in MCP Master track Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle License: GPL - http://www.gnu.org/licenses/gpl.html\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="pcp" time="2022-08-17T04:56:13Z">
-        <changelog><![CDATA[- Initial release]]></changelog>
-        <source>https://github.com/s0u7h/pcp/raw/0dd29e0ac72ca2100b44eaa0a35e5eb0fa59c169/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
-      </version>
-      <version name="1.01" author="pcp" time="2022-08-17T10:44:35Z">
-        <changelog><![CDATA[- Initial release]]></changelog>
-        <source>https://github.com/s0u7h/pcp/raw/08ece232194a57f0d11c6038aaad9ef2f931ce95/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
-      </version>
-      <version name="1.02" author="pcp" time="2022-08-18T00:40:52Z">
-        <source>https://github.com/s0u7h/pcp/raw/d6e7432f08f3426ca99ffe427196bf924365c388/Let%20It%20Key%20(global%20scale%20tool)/Let_It_Key_(Master).jsfx</source>
-      </version>
-    </reapack>
     <reapack name="pcp_Let It Key - global scale tool.lua" type="script" desc="Let It Key (global scale tool)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
