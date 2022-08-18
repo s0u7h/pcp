@@ -200,12 +200,12 @@ while
                 whiteDegree = i; 
                 validKey = 1;
                 );
-                (i += 1) <= 6;
+                (i += 1) < scaleSize;
               );
                
               validKey == 1 ? //if valid key then compute position
               ( // good note then compute position
-               inPos = (octave - octaveOffset) * 7 + whiteDegree;  // compute input position
+               inPos = (octave - octaveOffset) * scaleSize + whiteDegree;  // compute input position
               );
             );
             // if valid key, compute new note and check if note exist 
