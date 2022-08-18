@@ -29,7 +29,7 @@ end
 
 local mstr = reaper.GetMasterTrack(0)
 local on_mstr_already = -1
-on_mstr_already = reaper.TrackFX_AddByName(mstr, "JS:Let It Key (MASTER)", false, 0) -- returns -1 if JS not found on mastre
+on_mstr_already = reaper.TrackFX_AddByName(mstr, "JS:Let It Key", false, 0) -- returns -1 if JS not found on mastre
 --reaper.ShowMessageBox(on_mstr_already, "master?", 0)
 if on_mstr_already == -1 -- check if Let It Key master is on the chain
  then
