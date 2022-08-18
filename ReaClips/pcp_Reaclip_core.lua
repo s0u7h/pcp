@@ -4,7 +4,7 @@
 @about ReaClips (build and browse a personal sound/clip/loop library)
   License: GPL - http://www.gnu.org/licenses/gpl.html
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.00pre3
+@version 1.00pre4
 @licence
 @metapackage
 @provides [nomain] .
@@ -16,7 +16,7 @@
   [main] pcp_Save ReaClip to Melodyned Clips folder (selected items).lua
   [main] pcp_Save ReaClip to SFX folder (selected items).lua
   [main] pcp_Save ReaClip to user-defined folder (selected items).lua
-  [main=main,mediaexplorer] pcp_Open Media Explorer to ReaClips database - search rpp - sort last modified (edgemeal).lua
+  [main=main,mediaexplorer] pcp_Open Media Explorer to ReaClips path (edgemeal snippet).lua
   [data] toolbar_icons/Load ReaClip at Edit Cursor.png
   [data] toolbar_icons/Load ReaClip.png
   [data] toolbar_icons/ReaClips.png
