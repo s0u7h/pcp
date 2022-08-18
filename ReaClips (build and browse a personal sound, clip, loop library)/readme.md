@@ -5,14 +5,30 @@
 
 ## Build and browse a personal sound/clip/loop library in REAPER
 
-These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects. 
+These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved from selected items, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects. 
 
+## Installation
+
+1. Install ReaPack and import my repo: https://github.com/s0u7h/pcp/raw/master/index.xml
+2. Also requires ReaPack repos from cfillion, JS_ReaScriptAPI (both installed by default) and [me2beats](https://github.com/me2beats/reapack/raw/master/index.xml)
+3. Install [SWS](http://www.sws-extension.org/download/pre-release/)
+4. Synchronize packages, Browse packages, Install ReaClips
+
+## Usage
+
+1. Select an item you want to save, and run the action "Save ReaClip (selected items)"
+2. This will prompt you to name the ReaClip (by default named with a time-stamp - thanks @paat for this snippet)
+3. The script will create a folder called "ReaClips" under your default save path. You can change this name in the script user settings or use one of the other actions (e.g. "Save ReaClip to Beats folder").
+4. There is an additional "save as" step due to limitations in REAPER's current API. When the dialog comes up, just hit OK. The option to include media should be enabled by default but maybe check this is the case on your system.
+5.  The script will then render the ReaClip, taking into account any sends or receives that affect the sound, and then open the Media Explorer to show the most recent ReaClips.
+6.  These are just project files so you can browse through them and either use the native actions to open them as projects or insert them as subprojects, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project.
+7.  The "Open Media Explorer to ReaClips" action is useful to put on a toolbar button. This is a super-useful Edgemeal snippet, edit the user settings inside for different folders/databases. ALso if you don't want the "Save ReaClip" actions to open the media browser automatically, you can change this in the script's user settings.
 
 ### REQUIREMENTS
 
 * SWS
 * JS_ReaScriptAPI
-* ReaPack repos: cfillion  for selecting send and receive tracks of selected tracks, and me2beats for his save/restore active project tabs.
+* ReaPack repos: cfillion for selecting send and receive tracks of selected tracks, and me2beats for his save/restore active project tabs.
 * Reaper 6.58+ - may work weirdly or not at all on older versions, as uses recent API.
 
 
@@ -37,7 +53,7 @@ if you add the Load/Save/Browse Reaclip actions to your Main or Media Explorer t
 ![Load ReaClip at Edit Cursor](https://user-images.githubusercontent.com/5218005/179659712-593dca72-80ff-4a03-8db1-0199e984bccd.png)
 
 
-Thanks to @paat for the auto-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice. Plus all the other awesome scripters whose code makes up the bulk of this script's functionality.
+Thanks to @paat for the auto-name-and-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice on exploding projects. Plus all the other awesome scripters whose code makes up the bulk of this script's functionality.
 
 ### TODO
 Documentation, clean-up for ReaPack, find a workaround to the additional 'save as' dialog.
