@@ -20,7 +20,7 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 2. This will prompt you to name the ReaClip (by default named and auto-saved with a time-stamp - thanks @paat!)
 3. The script will create a folder called "ReaClips" under your default save path. You can change this name in the script user settings or use one of the other actions (e.g. "Save ReaClip to Beats folder").
 4. There is an additional "save as" step due to limitations in REAPER's current API. When the dialog comes up, just hit OK. The option to include media should be enabled by default but maybe check this is the case on your system.
-![image](https://user-images.githubusercontent.com/5218005/185297355-e0550719-e3f6-44fc-b9b1-9629834bd89c.png)
+![image](https://user-images.githubusercontent.com/5218005/185297551-3954e201-e141-45db-b459-bb5cb174a514.png)
 
 5.  The script will then render the ReaClip, taking into account any sends or receives that affect the sound, and then open the Media Explorer to show the most recent ReaClips.
 6.  These are just project files so you can browse through them and either use the native actions to Open project / insert as subproject, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project. Unlike other 'explode subproject' clips this will carry over everything including automation items. With one exception...
