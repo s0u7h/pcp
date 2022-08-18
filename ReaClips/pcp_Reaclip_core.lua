@@ -4,7 +4,7 @@
 @about ReaClips (build and browse a personal sound/clip/loop library)
   License: GPL - http://www.gnu.org/licenses/gpl.html
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.00pre4
+@version 1.00
 @licence
 @metapackage
 @provides [nomain] .
@@ -300,8 +300,8 @@ function open_mx_to_reaclips_path()
   
   -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS --
   local search = ".rpp"
-  local wait = 0.600 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
-  local reaclips_folder = savepath .. reaclips_path
+  local wait = 0.700 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
+  local reaclips_folder = savepath .. "/" .. reaclips_path
   
   -- setup >>
   if not reaper.APIExists('JS_Window_SetTitle') then
