@@ -5,7 +5,7 @@
  Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle
  License: GPL - http://www.gnu.org/licenses/gpl.html
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.36
+@version 1.37
 @metapackage
 @provides [nomain] .
   [main] pcp_Remove Let It Key from all non-instrument tracks.lua
