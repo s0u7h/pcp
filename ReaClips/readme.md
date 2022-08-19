@@ -27,7 +27,8 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 7.  These are just project files (with audio preview) so you can browse through them and either use the native actions to Open project / insert as subproject, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project. Unlike other 'explode subproject' clips this will carry over everything including automation items. With one exception...
 8.  If your clip contains Melodyne or other ARA edits then the ReaClip shoud keep your edits intact. However if you use the 'Insert ReaClip' actions it'll immediately reanalyze and lose the edits. In that case, use 'Insert as subproject' or 'Open project in new tab' instead.
 9.  The "Open Media Explorer to ReaClips" action is useful to put on a toolbar button. This is a super-useful Edgemeal snippet, edit the user settings inside for different folders/databases. ALso if you don't want the "Save ReaClip" actions to open the media browser automatically, you can change this in the script's user settings.
-10. If you have projects tabs set to auto-render then you'll get extra RPP-prox files created whenever you load a ReaClip using the Insert actions. To prevent this, right click on a project tab and select 'Subproject rendering > Do not automatically render subprojects (require manual render)'
+10. If you get extra preview files created whenever you load a ReaClip using the Insert actions, you can change this by right-clicking on any project tab and selecting 'Subproject rendering > Do not automatically render subprojects (require manual render)'
+![Screenshot 2022-08-19 112835](https://user-images.githubusercontent.com/5218005/185537040-29f4d4a8-ed40-463d-8d7e-7f330d71938f.png)
 
 ### REQUIREMENTS
 
@@ -40,6 +41,7 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 ### What are ReaClips?
 
 They're just project files, with automatically generated audio previews, that the 'Save ReaClip' action automatically saves in a specific folder under your default save path. Once saved, you don't require these scripts to access or edit them. They can be browsed in the media explorer and opened as projects, inserted as subprojects, or exploded onto tracks using one of the 'Load ReaClip' scripts.
+
 
 ### Why not track templates?
 
