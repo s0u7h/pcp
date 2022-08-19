@@ -5,7 +5,7 @@
  Forked from IX Snap To Key and Global Sliders, Copyright 2014 Philip S. Considine, and Easy Scale 1.4 (Snap to Key mod) by dissofiddle
  License: GPL - http://www.gnu.org/licenses/gpl.html
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.33
+@version 1.34
 @metapackage
 @provides [nomain] .
   [main] pcp_Remove Let It Key from all non-instrument tracks.lua
@@ -16,7 +16,7 @@
   [main] pcp_Add Let It Key to selected tracks.lua
   Let-It-Key-Master.RfxChain
   Let-It-Key-IFX.RfxChain 
-  [Effects] Let It Key (global scale tool)/Let_It_Key_(Input_FX).jsfx-inc
-  [Effects] Let It Key (global scale tool)/Let_It_Key_Syncer.jsfx-inc
-  [Effects] Let It Key (global scale tool)/Let_It_Key_(Master).jsfx
+  [effect] Let It Key (global scale tool)/Let_It_Key_(Input_FX).jsfx-inc
+  [effect] Let It Key (global scale tool)/Let_It_Key_Syncer.jsfx-inc
+  [effect] Let It Key (global scale tool)/Let_It_Key_(Master).jsfx
 --]]
