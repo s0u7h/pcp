@@ -52,18 +52,21 @@ function InsertMediaItemAndExplodeInNewTab()
   SaveTempProject()
   reaper.Main_OnCommand(40860, 0) --Close current project tab
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_RSc4b08953457ee0ea58cc55d5ccce70175d05f0c5'), 0) -- Script: me2beats_Restore saved project tab, slot 1.lua
+  reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
   reaper.Main_OnCommand(42398, 0) -- Item: Paste items/tracks
 end
 
-function RemoveImportedItem()
-  reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_RESTORESEL'), 0) --SWS: Restore saved track selection
-  reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
-end
+-- function RemoveImportedItem()
+--   reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_RESTORESEL'), 0) --SWS: Restore saved track selection
+--   reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
+-- end
 
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 reaper.Undo_BeginBlock()
+
 InsertMediaItemAndExplodeInNewTab()
 RemoveImportedItem()
+
 reaper.Undo_EndBlock("Insert Reaclip at start (load and explode project on new tracks in current project", -1)
 reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
 

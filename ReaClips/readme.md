@@ -60,4 +60,5 @@ if you add the Load/Save/Browse Reaclip actions to your Main or Media Explorer t
 Thanks to @paat for the auto-name-and-save script snippet and for suggesting this type of project-based workflow, Edgemeal for the media explorer script and BirdBird and Lemerchand for Discord advice on exploding projects, cfillion, SWS, me2beats and Julian Sader for code that makes up the bulk of this script's functionality.
 
 ### TODO
-Clean-up for ReaPack, find a workaround to the additional 'save as' dialog.
+Find a workaround to the additional 'save as' dialog.
+Improve undo history behaviour (tricky as switches projects tabs in the background)

@@ -23,74 +23,54 @@ function error_exit(message)
 end
 
 
-function find_melodyne_number_in_item(take, number_melodyne) --yannick snippet
+-- function find_melodyne_number_in_item(take, number_melodyne) --yannick snippet
 
 
-  for i=0, reaper.TakeFX_GetCount(take) - 1 do
-    local retval, buf = reaper.TakeFX_GetNamedConfigParm( take, i, 'fx_ident' )
-    if buf:find("{5653544D6C70676D656C6F64796E6520") then
-      number_melodyne = i
-    end
-  end
-  if number_melodyne == nil then
-    number_melodyne = 'no number'
-  end
-  return number_melodyne
-end
+--   for i=0, reaper.TakeFX_GetCount(take) - 1 do
+--     local retval, buf = reaper.TakeFX_GetNamedConfigParm( take, i, 'fx_ident' )
+--     if buf:find("{5653544D6C70676D656C6F64796E6520") then
+--       number_melodyne = i
+--     end
+--   end
+--   if number_melodyne == nil then
+--     number_melodyne = 'no number'
+--   end
+--   return number_melodyne
+-- end
 
-function CheckMelodyne() -- using yannick snippet. if there are any Melodyne items in the ReaClip then flash a message box warning the user
+-- function CheckMelodyne() -- using yannick snippet. if there are any Melodyne items in the ReaClip then flash a message box warning the user
 
-  reaper.Main_OnCommand(40182, 0) -- select all items
-  local count_sel_items = reaper.CountSelectedMediaItems(0)
-  if reaper.CountSelectedMediaItems(0) == 0 then
-    nothing() return
-  end
+--   reaper.Main_OnCommand(40182, 0) -- select all items
+--   local count_sel_items = reaper.CountSelectedMediaItems(0)
+--   if reaper.CountSelectedMediaItems(0) == 0 then
+--     nothing() return
+--   end
 
  
-  for i=0, count_sel_items-1 do
+--   for i=0, count_sel_items-1 do
   
 
-    local number_melodyne = 'no number'
-    local item = reaper.GetSelectedMediaItem(0,i)
-    local take = reaper.GetActiveTake(item)
-    local number_melodyne = find_melodyne_number_in_item(take, number_melodyne)
-    -- if number_melodyne == 'no number' then
-    --   reaper.TakeFX_AddByName( take, user_name_melodyne, -1000)
+--     local number_melodyne = 'no number'
+--     local item = reaper.GetSelectedMediaItem(0,i)
+--     local take = reaper.GetActiveTake(item)
+--     local number_melodyne = find_melodyne_number_in_item(take, number_melodyne)
+--     -- if number_melodyne == 'no number' then
+--     --   reaper.TakeFX_AddByName( take, user_name_melodyne, -1000)
       
-    --   number_melodyne = find_melodyne_number_in_item(take, number_melodyne)
-    -- end
-    if number_melodyne == 'no number' then
-      nothing()
-    else
-      local ok = reaper.ShowMessageBox('ReaClip contains Melodyne, edits may be lost if you load as a ReaClip. Load as subproject instead?', 'Melodyne Warning', 3)
-      reaper.ShowMessageBox(ok, "message box output", 0)  -- Yes == 6, No == 7, Cancel == 2
-    --if not ok then
-      break
-    end
+--     --   number_melodyne = find_melodyne_number_in_item(take, number_melodyne)
+--     -- end
+--     if number_melodyne == 'no number' then
+--       nothing()
+--     else
+--       local ok = reaper.ShowMessageBox('ReaClip contains Melodyne, edits may be lost if you load as a ReaClip. Load as subproject instead?', 'Melodyne Warning', 3)
+--       reaper.ShowMessageBox(ok, "message box output", 0)  -- Yes == 6, No == 7, Cancel == 2
+--     --if not ok then
+--       break
+--     end
 
+--   end
 
-
-
-  --   local tr_it_1 = reaper.GetMediaItem_Track(item)
-  --   if i < count_sel_items-1 then
-  --     local item_2 = reaper.GetSelectedMediaItem(0,i+1)
-  --     local tr_it_2 = reaper.GetMediaItem_Track(item_2)
-  --     if tr_it_1 ~= tr_it_2 then
-  --       t_sel_tracks[#t_sel_tracks+1] = tr_it_1
-  --     end
-  --   else
-  --     t_sel_tracks[#t_sel_tracks+1] = tr_it_1
-  --   end
-  --   last_item = item
-  --   last_number_melodyne = number_melodyne
-  -- end
-  -- reaper.Main_OnCommand(40297,0) -- unselect all tracks
-
-  -- for i=1, #t_sel_tracks do
-  --   reaper.SetTrackSelected(t_sel_tracks[i], true)
-  end
-
-end
+-- end
 
 
 function SaveTempProject()
@@ -116,7 +96,7 @@ end
 
 function InsertMediaItemAndExplodeInNewTab()
   reaper.JS_WindowMessage_Send(me, "WM_COMMAND", 41001, 0, 0, 0) -- Media: Insert on a new track
-  reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVESEL'), 0) --SWS: Save current track selection
+  --reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVESEL'), 0) --SWS: Save current track selection
   reaper.Main_OnCommand(41816, 0) -- Item: Open associated project in new tab
   reaper.Main_OnCommand(40296, 0) -- Track: Select all tracks
   --CheckMelodyne() -- to write. if there's ARA info in the project then could give user the option to leave the ReaClp loaded as a subproject, where Melodyne should work.
@@ -124,6 +104,7 @@ function InsertMediaItemAndExplodeInNewTab()
   SaveTempProject()
   reaper.Main_OnCommand(40860, 0) --Close current project tab
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_RSc4b08953457ee0ea58cc55d5ccce70175d05f0c5'), 0) -- Script: me2beats_Restore saved project tab, slot 1.lua
+  reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
   reaper.Main_OnCommand(42398, 0) -- Item: Paste items/tracks
 end
 
@@ -140,7 +121,7 @@ function MoveItemsEnvelopesToEditCursor()
   reaper.Main_OnCommand(40699, 0)-- Edit: Cut items
   reaper.Main_OnCommand(42398, 0)-- Item: Paste items/tracks
   
-  if ra == 1 then-- if ripple editing (all) was originally on
+  if ra == 1 then -- if ripple editing (all) was originally on
   reaper.Main_OnCommand(40311, 0) -- set ripple editing (all tracks) on
   end
   if rt + ra == 0 then-- if ripple editing per track was also off before we temporarily set it on
@@ -148,18 +129,18 @@ function MoveItemsEnvelopesToEditCursor()
   end
 end
 
-function RemoveImportedItem()
-  reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_RESTORESEL'), 0) --SWS: Restore saved track selection
-  reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
-end
+-- function RemoveImportedItem()
+--   reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_RESTORESEL'), 0) --SWS: Restore saved track selection
+--   reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
+-- end
 
 
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 reaper.Undo_BeginBlock() -- Begining of the undo block. Leave it at the top of your main function.
 
 InsertMediaItemAndExplodeInNewTab()
+-- RemoveImportedItem()MoveItemsEnvelopesToEditCursor()
 MoveItemsEnvelopesToEditCursor()
-RemoveImportedItem()
 
 reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor", -1) -- End of the undo block. Leave it at the bottom of your main function.
 
