@@ -97,14 +97,17 @@ end
 function InsertMediaItemAndExplodeInNewTab()
   reaper.JS_WindowMessage_Send(me, "WM_COMMAND", 41001, 0, 0, 0) -- Media: Insert on a new track
   --reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVESEL'), 0) --SWS: Save current track selection
+  reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor(a)", -1) 
   reaper.Main_OnCommand(41816, 0) -- Item: Open associated project in new tab
   reaper.Main_OnCommand(40296, 0) -- Track: Select all tracks
   --CheckMelodyne() -- to write. if there's ARA info in the project then could give user the option to leave the ReaClp loaded as a subproject, where Melodyne should work.
   reaper.Main_OnCommand(40210, 0) --Track: Copy tracks
   SaveTempProject()
   reaper.Main_OnCommand(40860, 0) --Close current project tab
+  reaper.Undo_BeginBlock()
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_RSc4b08953457ee0ea58cc55d5ccce70175d05f0c5'), 0) -- Script: me2beats_Restore saved project tab, slot 1.lua
   reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
+  reaper.Main_OnCommand(reaper.NamedCommandLookup('_XENAKIOS_SELPREVTRACK'), 0) -- Xenakios/SWS: Select previous tracks
   reaper.Main_OnCommand(42398, 0) -- Item: Paste items/tracks
 end
 
@@ -139,10 +142,10 @@ reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the sc
 reaper.Undo_BeginBlock() -- Begining of the undo block. Leave it at the top of your main function.
 
 InsertMediaItemAndExplodeInNewTab()
--- RemoveImportedItem()MoveItemsEnvelopesToEditCursor()
+-- RemoveImportedItem()
 MoveItemsEnvelopesToEditCursor()
 
-reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor", -1) -- End of the undo block. Leave it at the bottom of your main function.
+reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor(b)", -1) -- End of the undo block. Leave it at the bottom of your main function.
 
 reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
 

@@ -27,6 +27,7 @@ These scripts provide functionality for REAPER inspired by Ableton Live Clips an
 7.  These are just project files (with audio preview) so you can browse through them and either use the native actions to Open project / insert as subproject, or use the actions "Insert ReaClip at start" or "Insert ReaClip at edit cursor" to load and explode the file into your currently active project. Unlike other 'explode subproject' clips this will carry over everything including automation items. With one exception...
 8.  If your clip contains Melodyne or other ARA edits then the ReaClip shoud keep your edits intact. However if you use the 'Insert ReaClip' actions it'll immediately reanalyze and lose the edits. In that case, use 'Insert as subproject' or 'Open project in new tab' instead.
 9.  The "Open Media Explorer to ReaClips" action is useful to put on a toolbar button. This is a super-useful Edgemeal snippet, edit the user settings inside for different folders/databases. ALso if you don't want the "Save ReaClip" actions to open the media browser automatically, you can change this in the script's user settings.
+10. If you have projects tabs set to auto-render then you'll get extra RPP-prox files created whenever you load a ReaClip using the Insert actions. To prevent this, right click on a project tab and select 'Subproject rendering > Do not automatically render subprojects (require manual render)'
 
 ### REQUIREMENTS
 
@@ -61,4 +62,3 @@ Thanks to @paat for the auto-name-and-save script snippet and for suggesting thi
 
 ### TODO
 Find a workaround to the additional 'save as' dialog.
-Improve undo history behaviour (tricky as switches projects tabs in the background)
