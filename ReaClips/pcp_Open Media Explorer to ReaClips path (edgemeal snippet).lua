@@ -15,7 +15,7 @@
 -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS --
 local folder = "ReaClips"
 local search = ".rpp"
-local wait = 0.400 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
+local wait = 0.600 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
 -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS --
 
 
