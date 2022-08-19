@@ -16,7 +16,7 @@
   [main] pcp_Add Let It Key to selected tracks.lua
   Let-It-Key-Master.RfxChain
   Let-It-Key-IFX.RfxChain 
-  [effect] Let It Key (global scale tool)/Let_It_Key_(Input_FX).jsfx-inc
-  [effect] Let It Key (global scale tool)/Let_It_Key_Syncer.jsfx-inc
-  [effect] Let It Key (global scale tool)/Let_It_Key_(Master).jsfx
+  [jsfx] Let_It_Key_(Input_FX).jsfx-inc > Let It Key (global scale tool)/Let_It_Key_(Input_FX).jsfx-inc
+  [jsfx] Let_It_Key_Syncer.jsfx-inc > Let It Key (global scale tool)/Let_It_Key_Syncer.jsfx-inc
+  [jsfx] Let_It_Key_(Master).jsfx > Let It Key (global scale tool)/Let_It_Key_(Master).jsfx
 --]]

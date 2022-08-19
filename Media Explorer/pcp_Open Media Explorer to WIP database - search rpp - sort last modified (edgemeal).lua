@@ -1,3 +1,5 @@
+-- @noindex
+
 --Open Media Explorer to ReaClips database - search rpp - sort last modified (edgemeal)
 --=Edgemeals script from the forum
 -- Need to load this script separately in both the Media Explorer and Main contexts

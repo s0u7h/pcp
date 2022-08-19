@@ -1,3 +1,6 @@
+-- @noindex
+
+
 local r = reaper; local function nothing() end; local function bla() r.defer(nothing) end
 
 reaper.Undo_BeginBlock()
