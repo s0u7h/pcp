@@ -1,11 +1,11 @@
 --[[
-@description ReaClips
+@description ReaClips (build and browse a personal sound/clip/loop library)
 @author pcp
-@about ReaClips (build and browse a personal sound/clip/loop library)
+@about 
   These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved from selected items, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects.
-  License: GPL - http://www.gnu.org/licenses/gpl.html
+  [License: GPL](http://www.gnu.org/licenses/gpl.html)
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.03
+@version 1.04
 @licence
 @metapackage
 @provides [nomain] .
