@@ -4,7 +4,7 @@
 @about 
   Play in key across all your tracks. This bundle lets you monitor and control the key of your project from the master track. Set the key in Master Track Controls ("Show FX parameters in panel" will make these visible). Ride or automate the root and scale and play in key throughout a project, playing the scale degrees on white keys (or use chromatic option for pads).
   This forks scripts from IX (Snap to Key and Global Sliders) and the Easy Scale mod by baldo, and relies on their work.
-  Let It Key provides provides the ability to control any track's input key from a global control in the master track, which controls individual instances of Let It Key elsewhere in your project.
+  Let It Key provides the ability to control any track's input key from a global control in the master track, which controls individual instances of Let It Key elsewhere in your project.
   [License: GPL](http://www.gnu.org/licenses/gpl.html)
 @links Repository https://github.com/s0u7h/pcp/
 @version 1.60
