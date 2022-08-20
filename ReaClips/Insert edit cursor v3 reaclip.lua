@@ -20,7 +20,7 @@ function SaveTempProject()
 -- this adds a Temp folder to the default save path for the imported subprojects (which can then be trashed.)
 -- no audio is copied so the folder should be pretty tiny anyway.
 -- this just allows for saving silently
---  data-and-time auto-save snippet is adapted from @paat's auto-save script 
+-- the data-and-time auto-save snippet is adapted from @paat's auto-save script 
   retval, savepath = reaper.get_config_var_string("defsavepath")
   if savepath == "" then  
     error_exit("Cannot save file - no default save path")
@@ -47,7 +47,6 @@ function InsertMediaItemAndExplodeInNewTab()
   reaper.JS_WindowMessage_Send(me, "WM_COMMAND", 41001, 0, 0, 0) -- Media: Insert into project on new track
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVESEL'), 0) --SWS: Save current track selection
   reaper.Undo_EndBlock("Insert ReaClip(a)", -1) 
-  
   reaper.Main_OnCommand(41816, 0) -- Item: Open associated project in new tab
   reaper.Main_OnCommand(40296, 0) -- Track: Select all tracks
   reaper.Main_OnCommand(40210, 0) --Track: Copy tracks
