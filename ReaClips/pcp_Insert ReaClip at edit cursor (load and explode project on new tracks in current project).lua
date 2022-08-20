@@ -114,8 +114,7 @@ end
 function MoveItemsEnvelopesToEditCursor()
   reaper.Main_OnCommand(40289, 0) --Item: Unselect (clear selection of) all items
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_TOGITEMSEL'), 0) --SWS: Toggle selection of items on selected track(s)
-  -- following needs 'envelope poitns move with media items enabled'
-  -- chould check if it's on and if not, turn it off after moving
+
   
   local ra = reaper.GetToggleCommandState(41991) -- get ripple all state
   local rt = reaper.GetToggleCommandState(41990) -- get ripple per-track state
