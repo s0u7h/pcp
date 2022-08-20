@@ -5,7 +5,7 @@
   These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved from selected items, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects.
   [License: GPL](http://www.gnu.org/licenses/gpl.html)
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.05
+@version 1.06
 @licence
 @metapackage
 @provides [nomain] .

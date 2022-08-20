@@ -66,9 +66,10 @@ end
 
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 reaper.Undo_BeginBlock()
-
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_SAVE_CURSOR_POS_SLOT_15'), 0) --SWS/BR: Save edit cursor position, slot 15
 InsertMediaItemAndExplodeInNewTab()
 -- RemoveImportedItem()
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_RESTORE_CURSOR_POS_SLOT_15'), 0) -- SWS/BR: Restore edit cursor position, slot 15
 
 reaper.Undo_EndBlock("Insert Reaclip at start (load and explode project on new tracks in current project", -1)
 reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.

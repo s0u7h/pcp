@@ -10,7 +10,7 @@ temp_folder = "Temp"
 
 ---------------------
 
-reaper.Main_OnCommand(reaper.NamedCommandLookup('_RS1ad9b3e745ad836bebeee40ba9e7a5279a356ea8'), 0) -- Script: me2beats_Save active project tab, slot 1.lua
+
 reaper.Main_OnCommand(40289, 0) -- unselect all items
 me = reaper.JS_Window_Find("Media Explorer", true)
 
@@ -98,6 +98,7 @@ function InsertMediaItemAndExplodeInNewTab()
   reaper.JS_WindowMessage_Send(me, "WM_COMMAND", 41001, 0, 0, 0) -- Media: Insert on a new track
   --reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVESEL'), 0) --SWS: Save current track selection
   reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor(a)", -1) 
+  reaper.Main_OnCommand(reaper.NamedCommandLookup('_RS1ad9b3e745ad836bebeee40ba9e7a5279a356ea8'), 0) -- Script: me2beats_Save active project tab, slot 1.lua
   reaper.Main_OnCommand(41816, 0) -- Item: Open associated project in new tab
   reaper.Main_OnCommand(40296, 0) -- Track: Select all tracks
   --CheckMelodyne() -- to write. if there's ARA info in the project then could give user the option to leave the ReaClp loaded as a subproject, where Melodyne should work.
@@ -139,12 +140,12 @@ end
 
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 reaper.Undo_BeginBlock() -- Begining of the undo block. Leave it at the top of your main function.
-
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_SAVE_CURSOR_POS_SLOT_15'), 0) --SWS/BR: Save edit cursor position, slot 15
 InsertMediaItemAndExplodeInNewTab()
 -- RemoveImportedItem()
 MoveItemsEnvelopesToEditCursor()
-
-reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor(b)", -1) -- End of the undo block. Leave it at the bottom of your main function.
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_RESTORE_CURSOR_POS_SLOT_15'), 0) -- SWS/BR: Restore edit cursor position, slot 15
+reaper.Undo_EndBlock("Insert ReaClip at Edit Cursor", -1) -- End of the undo block. Leave it at the bottom of your main function.
 
 reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
 
