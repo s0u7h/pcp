@@ -52,8 +52,8 @@ function InsertMediaItemAndExplodeInNewTab()
   reaper.Main_OnCommand(40210, 0) --Track: Copy tracks
   SaveTempProject()
   reaper.Main_OnCommand(40860, 0) --Close current project tab
-  reaper.Undo_BeginBlock()
   reaper.Main_OnCommand(reaper.NamedCommandLookup('_RSc4b08953457ee0ea58cc55d5ccce70175d05f0c5'), 0) -- Script: me2beats_Restore saved project tab, slot 1.lua
+  reaper.Undo_BeginBlock()
   reaper.Main_OnCommand(40005, 0) --Track: Remove tracks
   reaper.Main_OnCommand(40286, 0) -- Track: Go to previous track
   reaper.Main_OnCommand(42398, 0) -- Item: Paste items/tracks
