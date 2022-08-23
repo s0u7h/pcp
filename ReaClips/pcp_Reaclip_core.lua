@@ -5,7 +5,7 @@
   These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved from selected items, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects.
   [License: GPL](http://www.gnu.org/licenses/gpl.html)
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.07
+@version 1.08
 @licence
 @metapackage
 @provides [nomain] .
@@ -254,8 +254,7 @@ function SaveReaClip()
 
   SaveProjectTab()
   reaper.Main_SaveProjectEx(proj, new_path, 0) --silently saves to temp folder without copying audio files - still atlased to the original
-  reaper.Undo_EndBlock("Save Reaclip(a)", -1)
-  reaper.Undo_BeginBlock()
+ 
   reaper.Main_OnCommand(41929, 0)   -- New project tab (ignore default template)
   reaper.Main_openProject("noprompt:" .. new_path)
   
@@ -285,7 +284,7 @@ function SaveReaClip()
  reaper.Main_SaveProject(0, true) -- *now* the project is saved with any remaining source media.  the boolean true forces a 'save as', and user *should* just have to hit enter (i.e. click OK) but if any issues then check that 'copy media' is selected (should be default) as there's no way in REAPER to specify saving copies of source audio. the boolean true forces a 'save as'
  reaper.Main_openProject("noprompt:" .. new_path) -- again, stops the prompt after rendering rpp-prox
  reaper.Main_OnCommand(40860, 0)  --Close current project tab
- reaper.Undo_EndBlock("Save Reaclip(b)", -1)
+
   RestoreProjectTab()
 end
 
@@ -422,12 +421,6 @@ end
 reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 
 
-reaper.Undo_BeginBlock()
-
-
-
-
-
 
 if not preset_file_init then -- If the file is run directly, it will execute SaveReaClipAndOpenMX(), else it will wait for Init() to be called explicitely from the preset scripts (usually after having modified some global variable states).
   -- TODO - add checks for cfillion and me2beats repos in reapack and for js_reascript api
@@ -436,11 +429,6 @@ if not preset_file_init then -- If the file is run directly, it will execute Sav
     SaveReaClipAndOpenMX()
   end
 end
-
-
-
-reaper.Undo_EndBlock("Save Reaclip", -1)
-
 
 
 
