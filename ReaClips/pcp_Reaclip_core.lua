@@ -5,7 +5,7 @@
   These scripts provide functionality for REAPER inspired by Ableton Live Clips and Studio One musicloops. Musical ideas and clips can be quickly saved from selected items, then browsed and organised in the Media Explorer, and loaded into an open project as exploded tracks or as subprojects.
   [License: GPL](http://www.gnu.org/licenses/gpl.html)
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.08
+@version 1.09
 @licence
 @metapackage
 @provides [nomain] .
@@ -66,9 +66,8 @@ else
     SaveCurrentProject()
   end
   SaveReaClip()
-  --aper.defer(open_mx_to_reaclips_path())
   if open_in_mx == true then
-    open_mx_to_reaclips_path()
+    reaper.defer(open_mx_to_reaclips_path())
   end
 end
 end
@@ -105,62 +104,59 @@ end
 
 function SaveSelTracksSlot1()
   --me2beats snippet
-  local r = reaper
   sel_tracks_str = ''
-  for i = 0, r.CountSelectedTracks()-1 do
-    sel_tracks_str = sel_tracks_str..r.GetTrackGUID(r.GetSelectedTrack(0,i))
+  for i = 0, reaper.CountSelectedTracks()-1 do
+    sel_tracks_str = sel_tracks_str..reaper.GetTrackGUID(reaper.GetSelectedTrack(0,i))
   end
 
-  r.DeleteExtState('me2beats_save-restore', 'sel_tracks_1', 0)
-  r.SetExtState('me2beats_save-restore', 'sel_tracks_1', sel_tracks_str, 0)
+  reaper.DeleteExtState('me2beats_save-restore', 'sel_tracks_1', 0)
+  reaper.SetExtState('me2beats_save-restore', 'sel_tracks_1', sel_tracks_str, 0)
 end
 
 function SaveSelTracksSlot2()
   --me2beats snippet
-  local r = reaper
-
-  sel_tracks_str = ''
-  for i = 0, r.CountSelectedTracks()-1 do
-    sel_tracks_str = sel_tracks_str..r.GetTrackGUID(r.GetSelectedTrack(0,i))
+ sel_tracks_str = ''
+  for i = 0, reaper.CountSelectedTracks()-1 do
+    sel_tracks_str = sel_tracks_str..reaper.GetTrackGUID(reaper.GetSelectedTrack(0,i))
   end
 
-  r.DeleteExtState('me2beats_save-restore', 'sel_tracks_2', 0)
-  r.SetExtState('me2beats_save-restore', 'sel_tracks_2', sel_tracks_str, 0)
+  reaper.DeleteExtState('me2beats_save-restore', 'sel_tracks_2', 0)
+  reaper.SetExtState('me2beats_save-restore', 'sel_tracks_2', sel_tracks_str, 0)
 
 end
 
 function RestoreSelTracksSlot1()
     --me2beats snippet
-  local r = reaper; local function nothing() end; local function bla() r.defer(nothing) end
+  local function nothing() end; local function bla() reaper.defer(nothing) end
 
-  local sel_tracks_str = r.GetExtState('me2beats_save-restore', 'sel_tracks_1')
+  local sel_tracks_str = reaper.GetExtState('me2beats_save-restore', 'sel_tracks_1')
   if not sel_tracks_str or sel_tracks_str == '' then bla() return end
 
-  r.Main_OnCommand(40297,0) -- unselect all tracks
+  reaper.Main_OnCommand(40297,0) -- unselect all tracks
 
   for guid in sel_tracks_str:gmatch'{.-}' do
-    local tr = r.BR_GetMediaTrackByGUID(0, guid)
-    if tr then r.SetTrackSelected(tr,1) end
+    local tr = reaper.BR_GetMediaTrackByGUID(0, guid)
+    if tr then reaper.SetTrackSelected(tr,1) end
   end
 end
 
 function RestoreSelTracksSlot12()
   --me2beats snippet
-local r = reaper; local function nothing() end; local function bla() r.defer(nothing) end
+local function nothing() end; local function bla() reaper.defer(nothing) end
 
-local sel_tracks_str_1 = r.GetExtState('me2beats_save-restore', 'sel_tracks_1')
-local sel_tracks_str_2 = r.GetExtState('me2beats_save-restore', 'sel_tracks_2')
+local sel_tracks_str_1 = reaper.GetExtState('me2beats_save-restore', 'sel_tracks_1')
+local sel_tracks_str_2 = reaper.GetExtState('me2beats_save-restore', 'sel_tracks_2')
 
 if not (sel_tracks_str_1 or sel_tracks_str_2) or (sel_tracks_str_1 == '' and sel_tracks_str_1 == '') then bla() return end
 
 for guid in sel_tracks_str_1:gmatch'{.-}' do
-  local tr = r.BR_GetMediaTrackByGUID(0, guid)
-  if tr then r.SetTrackSelected(tr,1) end
+  local tr = reaper.BR_GetMediaTrackByGUID(0, guid)
+  if tr then reaper.SetTrackSelected(tr,1) end
 end
 
 for guid in sel_tracks_str_2:gmatch'{.-}' do
-  local tr = r.BR_GetMediaTrackByGUID(0, guid)
-  if tr then r.SetTrackSelected(tr,1) end
+  local tr = reaper.BR_GetMediaTrackByGUID(0, guid)
+  if tr then reaper.SetTrackSelected(tr,1) end
 end
 end
 
@@ -178,17 +174,17 @@ end
 
 function RestoreProjectTab()
     --me2beats snippet
-  local r = reaper; local function nothing() end; local function bla() r.defer(nothing) end
+ local function nothing() end; local function bla() reaper.defer(nothing) end
 
   function get_cur_proj_tab_number()
     retval = nil
     for p = 1, 1000 do
-      retval = r.EnumProjects(p, '')
+      retval = reaper.EnumProjects(p, '')
       if not retval then projects = p break end
     end
-    local retval_0  = r.EnumProjects(-1, '')
+    local retval_0  = reaper.EnumProjects(-1, '')
     for p = 1, projects do
-      retval  = r.EnumProjects(p-1, '')
+      retval  = reaper.EnumProjects(p-1, '')
       if retval == retval_0 then cur_proj_tab = p break end
     end
     retval = nil; return cur_proj_tab-1, projects
@@ -196,7 +192,7 @@ function RestoreProjectTab()
 
 
   local ext_sec, ext_key = 'reaclip_og_save-restore', 'active_proj_tab'
-  saved_p_str = r.GetExtState(ext_sec, ext_key)
+  saved_p_str = reaper.GetExtState(ext_sec, ext_key)
   if not saved_p_str or saved_p_str == '' then bla() return end
 
 
@@ -204,7 +200,7 @@ function RestoreProjectTab()
 
 
   for i = 0, projects-1 do
-    local p = r.EnumProjects(i, 0)
+    local p = reaper.EnumProjects(i, 0)
     if saved_p_str == tostring(p):sub(-16) then iter = i break end
   end
 
@@ -216,7 +212,7 @@ function RestoreProjectTab()
   if iter > cur_p_iter then if d < d2 then a = 40861 else d = d2 -2 a = 40862 end
   else if d < d2 then a = 40862 else d = d2 -2 a = 40861 end end
 
-  for i = 0,d do r.Main_OnCommand(a,0) end -- prev/next project tab
+  for i = 0,d do reaper.Main_OnCommand(a,0) end -- prev/next project tab
 
 end
 
@@ -251,9 +247,12 @@ function SaveReaClip()
   if reaper.RecursiveCreateDirectory(new_dir, 0) == 0 then
     error_exit("Unable to create dir: \n" .. new_dir)
   end
-
+ 
   SaveProjectTab()
   reaper.Main_SaveProjectEx(proj, new_path, 0) --silently saves to temp folder without copying audio files - still atlased to the original
+ 
+ -- reaper.Main_OnCommand(reaper.NamedCommandLookup('_S&M_WNCLS3'), 0) -- close all floating fx windows
+ -- reaper.Main_OnCommand(reaper.NamedCommandLookup('_S&M_WNCLS4'), 0) -- close all  fx chain windows
  
   reaper.Main_OnCommand(41929, 0)   -- New project tab (ignore default template)
   reaper.Main_openProject("noprompt:" .. new_path)
@@ -284,8 +283,10 @@ function SaveReaClip()
  reaper.Main_SaveProject(0, true) -- *now* the project is saved with any remaining source media.  the boolean true forces a 'save as', and user *should* just have to hit enter (i.e. click OK) but if any issues then check that 'copy media' is selected (should be default) as there's no way in REAPER to specify saving copies of source audio. the boolean true forces a 'save as'
  reaper.Main_openProject("noprompt:" .. new_path) -- again, stops the prompt after rendering rpp-prox
  reaper.Main_OnCommand(40860, 0)  --Close current project tab
-
-  RestoreProjectTab()
+ 
+ 
+ RestoreProjectTab()
+ 
 end
 
 
@@ -303,7 +304,7 @@ function open_mx_to_reaclips_path()
   
   -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS -- USER SETTINGS --
   local search = ".rpp"
-  local wait = 0.700 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
+  local wait = 0.600 -- Explorer needs time to update/populate, set Time in seconds to wait between actions.
   local reaclips_folder = savepath .. "/" .. reaclips_path
   
   -- setup >>
@@ -418,7 +419,7 @@ function CheckSWS()
 end
 
 
-reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
+--reaper.PreventUIRefresh(1) -- Prevent UI refreshing. Uncomment it only if the script works.
 
 
 
@@ -427,12 +428,12 @@ if not preset_file_init then -- If the file is run directly, it will execute Sav
   CheckSWS()
   if SWS_installed == true then
     SaveReaClipAndOpenMX()
-  end
+ end
 end
 
 
 
-reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
+--reaper.PreventUIRefresh(-1) -- Restore UI Refresh. Uncomment it only if the script works.
 
 reaper.UpdateArrange() -- Update the arrangement (often needed)
 
