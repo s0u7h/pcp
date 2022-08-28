@@ -1,19 +1,19 @@
 
 --[[
-@description pcp_Toggle bypass Input FX by name
+@description pcp_Add or toggle bypass Scaler (Input FX)
 @author pcp
 @about 
-  adds the named FX in Input FX if it doesn't exist, otherwise toggles bypass
+  adds Scaler 2 in Input FX if it doesn't exist, otherwise toggles bypass
   modded version of cfillion's actions as there's no bypass input fx by name action in his bundle
 @links Repository https://github.com/s0u7h/pcp/
-@version 1.60
+@version 1.0
 --]]
 
 
 -------------------------------
 -------- USER SETTING ---------
 
-local fxname = "NAME OF FX AS DISPLAYED IN FX BROWSER"
+local fxname = "Scaler 2 (Plugin Boutique)"
   
 -------------------------------
 
@@ -29,6 +29,9 @@ for i = 0, reaper.CountSelectedTracks(0)-1 do
      then 
          reaper.TrackFX_SetEnabled(trk, 0x1000000 + FX_here,
          not reaper.TrackFX_GetEnabled(trk, 0x1000000 + FX_here))
+     else 
+        FX_here = reaper.TrackFX_AddByName(trk, fxname, true, 1)
+    
   end
 end
 
