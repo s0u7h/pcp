@@ -28,8 +28,9 @@ end
 
 --local MediaItemIsMIDI = reaper.TakeIsMIDI(take)
 --if MediaItemIsMIDI ~= nil then 
-
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_SAVEALLSELITEMS1'), 0)  -- sws save selected items
       reaper.Main_OnCommand(reaper.NamedCommandLookup('_RSae160f9c0e4ed7ccbb6edc5d7a57d1a54a28168a'), 0) -- Script: FTC_MeMagic.lua
+reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_RESTALLSELITEMS1'), 0)  -- sws restore selected items
 --else
 
  reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_ITEMZOOM'), 0) -- SWS Zoom to selected items
